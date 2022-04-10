@@ -21,7 +21,9 @@ notepad .\.gitignore
 ```
 git remote add gitlab-origin git@gitlab.com:atin-trainings/Training-Advanced-Devops-AWS-Terraform-Jenkins.git
 git push -u gitlab-origin main
+git checkout am1
 git add *
+git add .gitignore .gitignore-github .gitignore-gitlab
 git commit -am "-"
 git push -u gitlab-origin am1
 git checkout main
@@ -31,6 +33,7 @@ git checkout main
 ```
 git remote rename origin github-origin
 git push github-origin main
+git add .gitignore .gitignore-github .gitignore-gitlab
 git pull; git add *; git commit -am "-"; git push github-origin main
 ```
 
