@@ -39,6 +39,7 @@ git pull; git add *; git commit -am "-"; git push github-origin main
 
 - In case we need to remove private files from public repo:
 ```
+git checkout main
 git rm -r --cached .
 git add *
 git commit -am "-"
