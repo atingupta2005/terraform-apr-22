@@ -17,5 +17,11 @@ terraform plan
 # deploy terraform infra
 terraform apply
 
+# Verify
+Verify the file in folder "local-exe-output-files/creation-time.txt"
+
 # destroy infra
 terraform destroy
+
+# Verify
+Verify the file in folder "local-exec-output-files/destroy-time.txt"
