@@ -14,7 +14,7 @@ terraform {
     storage_account_name  = "terraformstate201"
     container_name        = "tfstatefiles"
     key                   = "terraform.tfstate"
-  }   
+  }
 }
 
 #####################################################################
@@ -27,7 +27,7 @@ provider "azurerm" {
 # Create a resource group
 resource "azurerm_resource_group" "myrg" {
   name = "myrg-1"
-  location = var.azure_region 
+  location = var.azure_region
 }
 # Create Virtual Network
 resource "azurerm_virtual_network" "myvnet" {
@@ -38,7 +38,7 @@ resource "azurerm_virtual_network" "myvnet" {
 }
 #####################################################################
 # Block-4: Input Variables Block
-# Define a Input Variable for Azure Region 
+# Define a Input Variable for Azure Region
 variable "azure_region" {
   default = "eastus"
   description = "Azure Region where resources to be created"
@@ -46,10 +46,10 @@ variable "azure_region" {
 }
 #####################################################################
 # Block-5: Output Values Block
-# Output the Azure Resource Group ID 
+# Output the Azure Resource Group ID
 output "azure_resourcegroup_id" {
   description = "My Azure Resource Group ID"
-  value = azurerm_resource_group.myrg.id 
+  value = azurerm_resource_group.myrg.id
 }
 #####################################################################
 # Block-6: Local Values Block
@@ -57,17 +57,9 @@ output "azure_resourcegroup_id" {
 locals {
   name = "${var.business_unit}-${var.environment_name}"
 }
+
 #####################################################################
-# Block-7: Data sources Block
-# Use this data source to access information about an existing Resource Group.
-data "azurerm_resource_group" "example" {
-  name = "existing"
-}
-output "id" {
-  value = data.azurerm_resource_group.example.id
-}
-#####################################################################
-# Block-8: Modules Block
+# Block-7: Modules Block
 # Azure Virtual Network Block using Terraform Modules (https://registry.terraform.io/modules/Azure/network/azurerm/latest)
 module "network" {
   source              = "Azure/network/azurerm"
