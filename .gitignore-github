@@ -29,7 +29,6 @@ Future/*
 .terraform
 *.tfstate
 *.tfstate.backup
-*.tfvars
 **/.terraform*
 **/.terraform
 **/.terraform.lock.hcl
